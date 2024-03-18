@@ -1,0 +1,898 @@
+* {
+    font-family: Open Sans;  /* Global styles */
+    margin: 0;
+    color: #425156;
+    padding: 0;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+h1,h2{
+    font-family: Lora;        /* Styling for headings */
+    color: #3B4A4F;
+}
+.homePage {
+    width: 100%;
+}
+.navBar {
+    height: auto;
+    padding: 2%;
+    padding:1.5%;
+    justify-content: center;
+    box-shadow: 0px 0px 5px 1px #cfcdcd;
+}
+.hamburger{
+    position: relative;
+    width: 30px;
+    height:4px;
+    background: black;
+    border-radius: 10px;
+    cursor:pointer;
+     transition: 0.3s;
+     z-index: 50;
+}
+.hamburger::before,
+.hamburger::after{
+    content: "";
+    position: absolute;
+    height:4px;
+    left:0;
+    background: black;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+.hamburger::before{
+    top:-10px;
+    width:30px;
+}
+.hamburger::after{
+    top:10px;
+    width:30px;
+}
+.toggle-menu{                                /* Styling for toggle menu */
+    position: absolute;
+    width:30px;
+    z-index:111;
+    cursor: pointer;
+    opacity: 0;
+    background-color: rgb(103, 90, 90);
+}
+.hamburger,.toggle-menu{
+    display: none;
+}
+.navbarItems input:checked ~.hamburger{
+     background: transparent;
+}
+.navbarItems input:checked ~.hamburger::before{
+    top:0;
+    transform: rotate(-45deg);
+    width: 30px;
+    background-color: white;
+}
+.navbarItems input:checked ~.hamburger::after{
+    top:0;
+    transform: rotate(45deg);
+    width: 30px;
+    background-color: white;
+}
+.navbarItems input:checked ~ .items{
+    left: 0;
+    box-shadow: -20px 0 40px rgba(0, 0, 0, 0.3);
+}
+.navBar,.items,.navbarItems,.postJob{
+    display: flex;
+    font-size: 12px;
+    flex-direction: row;
+}
+.navbarItems{
+    width: 80%;
+}
+.logo,.logoright{
+    background-color: #1BABA1;
+    color: white;
+    font-family: Lora;
+    padding: 0.5% 1%;
+    width: fit-content;
+    height: fit-content;
+    font-weight: bold;
+    font-size: 1.6rem;
+}
+.logoright{
+    display: none;
+}
+.items{
+    width: 56%;
+    align-items: center;
+    margin-left: 2%;
+}
+.items ul{
+    width: 100%;
+}
+.items ul a{
+    text-decoration: none;
+    padding-right: 5%;
+}
+.items ul a:hover{
+    text-decoration: underline;
+}
+.login{
+    width: 15%;
+    margin-left: 8%;
+}
+.login ul a{
+    padding-right: 17%;
+}
+.postJob{
+    color: #b6b2b2;
+    border: 2px solid #b6b2b2;
+    font-weight: bold;
+    margin-top: 4px;
+    height: fit-content;
+    padding: 6px 3%;
+    cursor: pointer;
+    border-radius: 1.3rem;
+}
+.freeLance{                                /* Styling for freelance section */
+    width: 100%;
+    height: auto;
+    padding-bottom: 24%;
+    background-image: url(../images/manwork.jpg);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    margin-top: 2px;
+}
+.center{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h1{
+    font-size: 2.7rem;
+    padding: 6% 6% 1%;
+    font-weight: 800;
+}
+.businessGrow{
+    text-align: center;
+    font-size: 1.2rem;
+    color: #3B4A4F;
+}
+.typeWork{
+    background-color: white;
+    padding: 0.7% 1%;
+    display: flex;
+    margin-top: 3%;
+    height: 2.6rem;
+    width: 79%;
+    border-radius: 2rem;
+    flex-direction: row;
+    box-shadow: 0px 2px 5px 2px #c9c6c6;
+    justify-content: space-between;
+}
+.typeWork input[type="search"]{
+    border: none;
+    outline: none;
+    margin-left: 6%;
+    width: 76%;
+}
+.typeWork input[type="search"]::placeholder{
+    color: rgb(163, 163, 163);
+}
+.typeWork input[type="search"]::-webkit-search-cancel-button{
+    cursor: pointer;
+}
+.purpleButton{
+    background-color: #D02184;
+    border: none;
+    color: white;
+    padding: 0.5% 6%;
+    border-radius: 1.3rem;
+    cursor: pointer;
+}
+.purpleButton:hover{
+  transform: scale(1.1);
+  transition: 100ms;
+}
+.hirePage{                                     /* Styling for hire page */
+    width: 100%;
+    height: auto;
+    padding:4% 0% 3%;
+    display: flex;
+    flex-direction: column;
+}
+.scopeWork{
+    box-shadow: none;
+}
+.scopeWork .navbarItems{
+    justify-content: space-between;
+}
+.hire{
+    font-family: Lato;
+    font-size: 1.4rem;
+    color: #4d4d4d;
+    width: 18%;
+    padding-top: 1%;
+    padding-left: 4%;
+    font-weight: 600;
+}
+.tasks{
+    display: flex;
+    flex-direction: column;
+    padding-left: 1%;
+}
+.greenHead{
+    font-weight: bold;
+    color: #1BABA1;
+    padding-top: 1.5%;
+    font-size: 1rem;
+}
+.tasks :nth-child(2){
+    font-size: 0.8rem;
+    width: 80%;
+    padding-top: 3%;
+}
+.aheadCurve {
+    display: flex;
+    width: 100%;
+    padding-bottom: 1%;
+    margin-top: 4%;
+}
+.work{
+    width: 57%;
+    background-image: url(../images/work.jpg);
+    background-size: cover;
+}
+.content{
+    width: 50%;
+    background-color: #eff5f5;
+    display: flex;
+    padding: 8% 4%;
+    flex-direction: column;
+    justify-content: center;
+}
+.headIng{
+    width: 53%;
+    padding-left: 0%;
+}
+.new{
+    width: 74%;
+    font-size: 13px;
+    padding-top: 2%;
+    text-align: left;
+}
+.content .greenHead{
+    padding-top: 4%;
+    font-size: 13px;
+}
+.expertPage{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    padding-top: 2%;
+}
+.centerTeam{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+.build{
+    font-size: 1.8rem;
+    text-align: center;
+    padding-top: 0%;
+}
+.centerTeam .businessGrow{
+    font-size: 1rem;
+}
+.cardContainer{
+    width: 100%;
+    display: flex;
+    height: 70%;
+    margin-top: 5%;
+}
+.webWriters,.mobileSales,.virtualDesign{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 100%;
+    align-items: center;
+}
+.webDev .lorem{
+    border-bottom: 1px solid rgb(185, 182, 182);
+}
+.design .lorem{
+    border-bottom: 1px solid rgb(185, 182, 182);
+} 
+.mobileSales{
+    margin-left: 4%;
+}
+.mobileDev .lorem{
+    width: 80%;
+}
+.webDev,.mobileDev,.design{
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.writers, .sales ,.virtual{
+    margin-top: 12%;
+}
+.virtualDesign{
+    margin-left: 2%;
+}
+.image{
+    width: 20%;
+    height: 26%;
+    padding-left: 35%;
+    padding-top: 10%;
+}
+.rocket{
+    width: 100%;
+    height: 100%;
+}
+.role{
+    color: #3B4A4F;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    width: 56%;
+    line-height: 1.1rem;
+    padding-left: 17%;
+    padding-top: 8%;
+}
+.lorem{
+    font-size: 12px;
+    width: 71%;
+    height: 33%;
+    margin-left: 12%;
+    padding-top: 5%;
+    text-align: center;
+}
+.mobileDev{
+    box-shadow: 0px 2px 18px 0px #ddd8d8;
+    width: 82%;
+    height: 48%;
+    margin-left: 3%;
+}
+.writers .image{
+    height:30% ;
+}
+.writers .role{
+    padding-top: 12%;
+}
+.mobile{
+    width: 21%;
+    height: 25%;
+    padding-left: 36%;
+}
+.sales{
+    border-left: 1px solid rgb(185, 182, 182);
+    border-right:1px solid rgb(185, 182, 182) ;
+}
+.graph{
+    padding-left: 39%;
+}
+.sales h2{
+    padding-left: 20%;
+}
+.sales .lorem{
+    padding-left: 2%;
+}
+.centerTeam .purpleButton{
+    width: 21%;
+    margin-top: 9%;
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 39%;
+    padding: 1.5% 2%;
+}
+.workPage{
+    display: flex;
+    width: 100%;
+    height: auto;
+    margin-top: 4%;
+    background-color: #dfecec;
+    flex-direction: column;
+    align-items: center;
+}
+.workPage .build{
+    padding-top: 5%;
+    font-size: 1.5rem;
+}
+.workPage .businessGrow{
+    font-size: 0.9rem;
+}
+.workPage .navbarItems{
+    width: 70%;
+    margin-top: 3%;
+}
+.find,.job,.project,.pay{
+    width: 20%;
+    margin-left: 5%;
+    height: 15rem;
+}
+.find .image{
+    padding-top: 0%;
+    width: 40%;
+    padding-left: 42px;
+    height: 30%;
+}
+.find .role{
+    padding-left: 0;
+    padding-top: 12%;
+    height: 9%;
+    width: 26%;
+    margin-top: 13%;
+    border-top: 2px solid #D02184;
+    margin-left: 31%;
+}
+.find .lorem{
+    width: 92%;
+    font-size: 11px;
+    margin-left: 0;
+    padding-top: 1px;
+}
+.ratePage{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2%;
+    align-items: center;
+}
+.ratePage .navbarItems{                      /* Styling for card containers */
+    width: 70%;
+    height: auto;
+    padding-bottom: 0%;
+    margin-top: 4%;
+    display: flex;
+    justify-content: space-between;
+}
+.timeStyle{
+    margin-top: 4%;
+    font-size: 11px;
+    font-family: Lora;
+    font-weight: bold;
+}
+.rateBuild{
+    padding-top: 0.5rem;
+}
+.rateGrow{
+    font-size: 1rem;
+}
+.basic{
+    width: 30%;
+    height: auto;
+    padding-bottom: 7%;
+    display: flex;
+    flex-direction: column;
+}
+.plan{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 41%;
+    background-color: #eff5f5;
+    justify-content: center;
+}
+.features{
+    background-color: white;
+    display: flex;
+    height: 54%;
+    flex-direction: column;
+}
+.plan :nth-child(2){
+    margin-top: 4%;
+    padding-left: 4%;
+}
+.cost{
+    display: flex;
+    width: 100%;
+}
+.cost :nth-child(1){
+    color: #D02184;
+    margin-top: 2%;
+    margin-left: 23%;
+    font-weight: bold;
+    font-size: 2rem;
+}
+.cost :nth-child(2){
+    padding-top: 3%;
+}
+.featurelist{
+    margin-top: 8%;
+    margin-left: 22%;
+}
+.medium .plan{
+    background-color: #D02184;
+    color: white;
+}
+.medium .featurelist{
+    text-decoration: underline;
+}
+.cost .num{
+    color: white;
+}
+.plan .num{
+    color: white;
+}
+.medium{
+    box-shadow:0px 2px 10px 0px rgb(164, 164, 164)
+}
+.testimonials{                                  /* Styling for testimonials section */
+    background-color: #f0f0f0;
+    width: 100%;
+    height: auto;
+    padding-bottom: 2%;
+    margin-top: 3%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2%;
+    align-items: center;
+}
+.testimonials .navbarItems{
+    width: 70%;
+    height: 69%;
+    padding-bottom: 0%;
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-between;
+}
+.testimonials .features{
+    background-color: transparent;
+    margin-top: 36%;
+}
+.circleImage{
+    position: absolute;
+    left: 32%;
+    top: 9%;
+}
+.leftCustomer{
+    box-shadow: none;
+    position: relative;
+}
+.john{
+    text-align: center;
+    width: 91%;
+    padding-left: 5%;
+}
+.john .name{
+    color: #1BABA1;
+    padding-top: 8%;
+    font-weight: bold;
+    font-size: 15px;
+    font-family: Lato;
+}
+.website{
+    margin-top: 30%;
+    width: 41%;
+}
+.combine{
+    padding: 25% 10% 8%;
+}
+.middleCustomer .combine{
+    background-color: #1BABA1;
+}
+.john .white{
+  color: white;
+}
+.bottomPage{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 4%;
+}
+.blocks{
+    width: 80%;
+    height: 70%;
+    margin-left: 9%;
+    margin-top: 4%;
+    display: flex;
+    justify-content: space-between;
+}
+.socials,.blogs,.instagram{
+    display: flex;
+    width: 32%;
+    height: 100%;
+    flex-direction: column;
+}
+.socials .logo{                                    /* Styling for social media blocks */
+    padding: 3.5% 5%;
+}
+.socials .businessGrow{
+    font-size: 12px;
+    text-align: left;
+    padding-top: 10%;
+    line-height: 1.2rem;
+    width: auto;
+}
+.medias{
+    display: flex;
+    margin-top: 10%;
+}
+.follow{
+    width: 20%;
+    font-size: 13px;
+}
+.icons{
+    display: flex;
+    width: 70%;
+    margin-left: 4%;
+}
+.icons ul{
+    width: 100%;
+}
+.icons ul li{
+    margin-right: 3%;
+    list-style-type: none;
+    display: inline;
+}
+.socials .searchEmail input[type="search"]{
+    outline: none;
+    margin-top: 7%;
+    width: 59%;
+    height: 57%;
+    padding-left: 2%;
+}
+.socials .searchEmail input[type="search"]::placeholder{
+    color: rgb(185, 184, 184);
+}
+.socials .searchEmail input[type="search"]::-webkit-search-cancel-button{
+    cursor: pointer;
+}
+.searchEmail{
+    display: flex;
+    height: 16%;
+    margin-top: 8%;
+}
+.subscribe{
+    width: 33%;
+    border: none;
+    margin-top: 7%;
+    outline: none;
+    color: white;
+    background-color: #D02184;
+}
+.subscribe:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+.heading{
+    width: 100%;
+    height: 85%;
+    flex-direction: column;
+    margin-top: 8%;
+}
+.lights{
+    display: flex;
+    height: 35%;
+}
+.text{
+    margin-left: 6%;
+    font-size: 11px;
+    margin-top: 12%;
+}
+.photos{                            /* Styling for photo gallery */
+    width: 80%;
+    height: 70%;
+    margin-top: 6%;
+    display: flex;
+}
+.firstRow{            
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 33%;
+}
+.firstRow ul {
+    width: 100%;
+}
+.firstRow ul li{
+    list-style-type: none;
+    display: inline;
+    margin: 0%;
+}
+.instagram .view{                       
+    margin-top: 17%;
+    font-size: 10px;
+}
+.bottomPage .template{
+    margin-top: 6%;
+    font-size: 12px;
+    color: #1BABA1;
+}
+@media(max-width:435px){                    /* Styling for mobile responsive */
+    .hamburger,.toggle-menu{
+        display: block;
+        margin-top: 5%;
+      }
+      .navBar .navbarItems{
+        width: 90%;
+        justify-content: space-between;
+      }
+      .navBar{
+        width: 100%;
+      }
+      .postJob {
+        padding: 6px 15%;
+    }
+      .items {
+        justify-content: start;
+        flex-direction: column;
+        margin-left: 0%;
+        align-items: center;
+        position: fixed;
+        padding-bottom: 2%;
+        top:0;
+        left: -150px;
+        width: 143px;
+        height: 100%;
+        padding-top: 20%;
+        transition: 0.75s;
+        background-color: #D02184;
+        z-index: 20;
+    }
+    .items ul a{
+        color: white;
+        font-weight: bold;
+        display: block;
+        margin-left: 17%;
+        margin-top: 12%;
+    }
+    .logo{
+        display: none;
+    }
+    .logoright{
+        display: block;
+    }
+    .login{
+        display: none;
+    }
+    h1 {
+        font-size: 2rem;
+        text-align: center;
+        width: 122%;
+        margin-top: 19%;
+    }
+    .businessGrow{
+        text-align: center;
+        width: 128%;
+        padding-top: 7%;
+    }
+    .freeLance{ padding-bottom: 47%;}
+    .typeWork{
+        width: 128%;
+        margin-top: 9%;
+    }
+    .scopeWork .navbarItems {
+        flex-direction: column;
+    }
+    .hire {
+        width: 88%;
+        padding-left: 1%;
+    }
+    .tasks :nth-child(2) {
+        width: 95%;
+    }
+    .work{
+        display: none;
+    }
+    .content{
+        width: 100%;
+        align-items: center;
+    }
+     .content .headIng{
+        text-align: center;
+    }
+    .centerTeam{
+        width: 100%;
+    }
+    .centerTeam h1{
+        width: 100%;
+        padding-left: 0;
+    }
+    .centerTeam .businessGrow {
+        font-size: 0.8rem;
+        padding: 3%;
+        width: 91%;
+    }
+    .cardContainer {
+        flex-direction: column;
+    }
+    .webWriters, .mobileSales, .virtualDesign {
+        width: 100%;
+        margin: 0;
+    }
+    .webDev .lorem,.design .lorem{
+        border-bottom: none;
+    }
+    .sales {
+        border-left:none;
+        border-right: none;
+    }
+    .mobileDev {
+        box-shadow: none;
+        width: 62%;
+        height: 48%;
+        margin-left: 3%;
+    }
+    .centerTeam .purpleButton {
+        width: 39%;
+        margin-top: 38%;
+        margin-left: 28%;
+    }
+    .workPage .navbarItems {
+        width: 70%;
+        margin-top: 3%;
+        flex-direction: column;
+    }
+    .workPage .businessGrow {
+        font-size: 0.7rem;
+        padding-top: 2%;
+    }
+    .homePage,.hirePage,.expertPage,.workPage,.ratePage,.testimonials,.bottomPage{
+        overflow: hidden;
+    }
+    .find, .job, .project, .pay {
+        width: 78%;
+        margin-left: 10%;
+        margin-top: 4%;
+        box-shadow: 0px 0px 4px 1px rgb(207, 206, 206);
+    }
+    .find .image {
+        padding-left: 51px;
+    }
+    .timeStyle {
+        margin-top: 7%;
+    }
+    .rateBuild {
+        margin-top: 4%;
+        width: auto;
+    }
+    .rateGrow{
+        width: 96%;
+        padding-top: 4%;
+    }
+    .ratePage .navbarItems {
+        height: auto;
+        margin-top: 4%;
+        flex-direction: column;
+    }
+    .basic {
+        width: 100%;
+        padding-bottom: 7%;
+        flex-direction: column;
+        box-shadow: 0px 0px 4px 1px #c4c0c0;
+    }
+    .medium{
+        box-shadow: 0px 0px 4px 1px #c4c0c0;
+        margin-top: 11%;
+    }
+    .hight{
+        margin-top: 24%;
+    }
+    .middleCustomer,.rightCustomer{
+        margin-top: 4%;
+    }
+    .testimonials .navbarItems {
+        flex-direction: column;
+    }
+    .blocks {
+        flex-direction: column;
+        height: auto;
+    }
+    .lights {
+        width: 86%;
+    }
+    .subscribe{
+        padding-bottom: 1%;
+    }
+    .socials, .blogs, .instagram {
+        width: 96%;
+        margin-top: 6%;
+    }
+}
+   
