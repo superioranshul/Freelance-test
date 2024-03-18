@@ -29,8 +29,8 @@ h1,h2{
     background: black;
     border-radius: 10px;
     cursor:pointer;
-     transition: 0.3s;
-     z-index: 50;
+    transition: 0.3s;
+    z-index: 50;
 }
 .hamburger::before,
 .hamburger::after{
@@ -704,20 +704,20 @@ h1{
     font-size: 12px;
     color: #1BABA1;
 }
-@media(max-width:435px){                    /* Styling for mobile responsive */
+@media(max-width:768px){                    /* Styling for mobile responsive */
     .hamburger,.toggle-menu{
         display: block;
         margin-top: 5%;
       }
       .navBar .navbarItems{
         width: 90%;
-        justify-content: space-between;
       }
       .navBar{
         width: 100%;
       }
       .postJob {
         padding: 6px 15%;
+        margin-left: 13%;
     }
       .items {
         justify-content: start;
@@ -747,6 +747,8 @@ h1{
     }
     .logoright{
         display: block;
+        margin-left: 13%;
+        margin-right: 8%;    
     }
     .login{
         display: none;
@@ -895,4 +897,5 @@ h1{
         margin-top: 6%;
     }
 }
-   
+
+
