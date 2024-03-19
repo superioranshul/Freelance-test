@@ -115,6 +115,8 @@ h1,h2{
 }
 .items ul a:hover{
     text-decoration: underline;
+    text-decoration-color: #1BABA1;
+    transition: 100ms; 
 }
 .login{
     width: 15%;
@@ -132,6 +134,12 @@ h1,h2{
     padding: 6px 3%;
     cursor: pointer;
     border-radius: 1.3rem;
+}
+.postJob:hover{
+    transform: scale(1.2);
+    background-color: black;
+    color: white;
+    transition: 200ms;
 }
 .freeLance{                                /* Styling for freelance section */
     width: 100%;
@@ -518,7 +526,23 @@ h1{
     color: white;
 }
 .medium{
-    box-shadow:0px 2px 10px 0px rgb(164, 164, 164)
+    box-shadow:0px 2px 10px 0px rgb(164, 164, 164);
+}
+.basic:hover{
+    box-shadow:0px 2px 10px 0px rgb(164, 164, 164);
+    transform: scale(1.1);
+}
+.basic:hover .plan{
+    background-color: #D02184;
+    transition: 200ms;
+}
+.basic:hover .plan>p{
+    color: white;
+    transition: 200ms;
+}
+.basic:hover .cost>p{
+    color: white;
+    transition: 200ms;
 }
 .testimonials{                                  /* Styling for testimonials section */
     background-color: #f0f0f0;
@@ -632,9 +656,11 @@ h1{
 }
 .socials .searchEmail input[type="search"]{
     outline: none;
-    margin-top: 7%;
+    margin-top: 6%;
     width: 59%;
-    height: 57%;
+    padding-top: 2%;
+    height: 1%;
+    padding-bottom: 2%;
     padding-left: 2%;
 }
 .socials .searchEmail input[type="search"]::placeholder{
@@ -646,12 +672,12 @@ h1{
 .searchEmail{
     display: flex;
     height: 16%;
-    margin-top: 8%;
+    margin-top: 2%;
 }
 .subscribe{
     width: 33%;
     border: none;
-    margin-top: 7%;
+    margin-top: 6%;
     outline: none;
     color: white;
     background-color: #D02184;
@@ -704,7 +730,7 @@ h1{
     font-size: 12px;
     color: #1BABA1;
 }
-@media(min-width:300px)and(max-width:768px){                    /* Styling for mobile responsive */
+@media(max-width:450px){                    /* Styling for mobile responsive */
     .hamburger,.toggle-menu{
         display: block;
         margin-top: 5%;
@@ -716,8 +742,10 @@ h1{
         width: 100%;
       }
       .postJob {
-        padding: 6px 15%;
-        margin-left: 13%;
+        padding: 6px 0px 6px 7%;
+        width: 30%;
+        margin-left: 22%;
+        text-align: center;
     }
       .items {
         justify-content: start;
@@ -747,8 +775,7 @@ h1{
     }
     .logoright{
         display: block;
-        margin-left: 13%;
-        margin-right: 8%;    
+        margin-left: 22%;  
     }
     .login{
         display: none;
@@ -773,12 +800,18 @@ h1{
         flex-direction: column;
     }
     .hire {
-        width: 88%;
-        padding-left: 1%;
+        width: 79%;
+        padding-left: 10%;
     }
     .tasks :nth-child(2) {
         width: 95%;
+        padding-top: 0;
     }
+    .tasks {
+        padding-left: 10%;
+        width: 79%;
+    }
+
     .work{
         display: none;
     }
@@ -787,26 +820,48 @@ h1{
         align-items: center;
     }
      .content .headIng{
-        text-align: center;
+        text-align: justify;
+        width: 75%;
+        padding-left: 0;
+    }
+    .new {
+        text-align: justify;
     }
     .centerTeam{
         width: 100%;
     }
     .centerTeam h1{
-        width: 100%;
-        padding-left: 0;
+        width: 67%;
+        text-align: justify;
+        padding-left: 15%;
     }
     .centerTeam .businessGrow {
         font-size: 0.8rem;
         padding: 3%;
-        width: 91%;
+        width: 67%;
+        margin-left: 11%;
+        text-align: justify;
     }
     .cardContainer {
         flex-direction: column;
     }
     .webWriters, .mobileSales, .virtualDesign {
-        width: 100%;
+        width: 90%;
+        align-items: center;
         margin: 0;
+    }
+    .webDev, .mobileDev, .design {
+        width: 60%;
+        margin-left: 8%;
+        padding-bottom: 3%;
+        box-shadow: 0px 0px 8px 0px #cccbcb;
+    }
+    .writers, .sales, .virtual {
+        margin-top: 12%;
+        width: 60%;
+        padding-bottom: 6%;
+        margin-left: 8%;
+        box-shadow: 0px 0px 8px 0px #cccbcb;
     }
     .webDev .lorem,.design .lorem{
         border-bottom: none;
@@ -816,10 +871,13 @@ h1{
         border-right: none;
     }
     .mobileDev {
-        box-shadow: none;
-        width: 62%;
+        width: 60%;
         height: 48%;
-        margin-left: 3%;
+        box-shadow: 0px 0px 8px #cccbcb;
+        margin-left: 8%;
+    }
+    .mobileSales, .virtualDesign {
+        margin-top: 12%;
     }
     .centerTeam .purpleButton {
         width: 39%;
@@ -831,9 +889,16 @@ h1{
         margin-top: 3%;
         flex-direction: column;
     }
+    .workPage .build {
+        font-size: 1.5rem;
+        margin-top: 0;
+    }
     .workPage .businessGrow {
         font-size: 0.7rem;
         padding-top: 2%;
+    }
+    .workPage {
+        background-color: white;
     }
     .homePage,.hirePage,.expertPage,.workPage,.ratePage,.testimonials,.bottomPage{
         overflow: hidden;
@@ -841,22 +906,36 @@ h1{
     .find, .job, .project, .pay {
         width: 78%;
         margin-left: 10%;
+        background-color: #dfecec;
         margin-top: 4%;
         box-shadow: 0px 0px 4px 1px rgb(207, 206, 206);
     }
     .find .image {
-        padding-left: 51px;
+        padding-left: 61px;
+        padding-top: 8%;
     }
     .timeStyle {
         margin-top: 7%;
     }
+    .find .role {
+        padding-top: 5%;
+        margin-left: 36%;
+    }
+    .find .lorem {
+        width: 83%;
+        margin-left: 18px;
+        padding-top: 6px;
+        text-align: justify;
+    }
     .rateBuild {
-        margin-top: 4%;
-        width: auto;
+        margin-top: 1%;
+        width: 69%;
     }
     .rateGrow{
-        width: 96%;
-        padding-top: 4%;
+        width: 60%;
+        text-align: justify;
+        padding-top: 3%;
+        line-height: 1.1rem;
     }
     .ratePage .navbarItems {
         height: auto;
@@ -868,6 +947,12 @@ h1{
         padding-bottom: 7%;
         flex-direction: column;
         box-shadow: 0px 0px 4px 1px #c4c0c0;
+    }
+    .cost {
+        padding-left: 11%;
+    }
+    .plan {
+        padding: 5%;
     }
     .medium{
         box-shadow: 0px 0px 4px 1px #c4c0c0;
